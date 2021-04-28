@@ -64,7 +64,7 @@ Window {
             minimumWidth = Theme.desktopAppWidth
         }
 
-        Glean.initialize('MozillaVPN', VPNSettings.gleanEnabled && VPN.productionMode, {
+        Glean.initialize('MozillaVPN', VPNSettings.gleanEnabled && !VPN.stagingMode, {
           appBuild: `MozillaVPN/${VPN.versionString}`,
           appDisplayVersion: VPN.versionString,
           httpClient: {
