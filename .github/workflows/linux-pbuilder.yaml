@@ -15,8 +15,7 @@ jobs:
     strategy:
       matrix:
         config:
-            - { name: "Hirsute Staging", dist: hirsute, buildargs: "-s" }
-            - { name: "Hirsute Production", dist: hirsute, buildargs: "" }
+            - { name: "Hirsute", dist: hirsute }
 
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +38,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get install qt5-default qttools5-dev-tools golang -y
-          ./scripts/linux_script.sh ${{ matrix.config.buildargs}} -r ${{ matrix.config.dist }} --source
+          ./scripts/linux_script.sh -r ${{ matrix.config.dist }} --source
       
       - name: Building package
         shell: bash
