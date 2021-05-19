@@ -21,17 +21,8 @@ Item {
         labelText: qsTrId("vpn.main.getHelp")
         onClicked: {
             Sample.getHelpClickedInitialize.record();
-            stackview.push(getHelpComponent);
+            stackview.push("../views/ViewGetHelp.qml");
         }
-    }
-
-    Component {
-        id: getHelpComponent
-
-        VPNGetHelp {
-            isSettingsView: false
-        }
-
     }
 
     VPNPanel {
