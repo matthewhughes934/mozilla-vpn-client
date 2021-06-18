@@ -44,8 +44,8 @@ class SettingsHolder final : public QObject {
                  NOTIFY developerUnlockChanged)
   Q_PROPERTY(bool stagingServer READ stagingServer WRITE setStagingServer NOTIFY
                  stagingServerChanged)
-  Q_PROPERTY(bool untestedFeatures READ untestedFeatures WRITE
-                 setUntestedFeatures NOTIFY untestedFeaturesChanged)
+  Q_PROPERTY(bool experimentalFeatures READ experimentalFeatures WRITE
+                 setExperimentalFeatures NOTIFY experimentalFeaturesChanged)
 
  public:
   SettingsHolder();
@@ -108,7 +108,7 @@ class SettingsHolder final : public QObject {
   GETSET(bool, hasGleanEnabled, gleanEnabled, setGleanEnabled)
   GETSET(bool, hasDeveloperUnlock, developerUnlock, setDeveloperUnlock)
   GETSET(bool, hasStagingServer, stagingServer, setStagingServer)
-  GETSET(bool, hasUntestedFeatures, untestedFeatures, setUntestedFeatures)
+  GETSET(bool, hasExperimentalFeatures, experimentalFeatures, setExperimentalFeatures)
   GETSET(QDateTime, hasInstallationTime, installationTime, setInstallationTime)
   GETSET(bool, hasServerSwitchNotification, serverSwitchNotification,
          setServerSwitchNotification);
@@ -161,7 +161,7 @@ class SettingsHolder final : public QObject {
   void connectionChangeNotificationChanged(bool value);
   void developerUnlockChanged(bool value);
   void stagingServerChanged(bool value);
-  void untestedFeaturesChanged(bool value);
+  void experimentalFeaturesChanged(bool value);
 
  private:
   explicit SettingsHolder(QObject* parent);

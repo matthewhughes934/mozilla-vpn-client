@@ -93,8 +93,8 @@ constexpr const char* SETTINGS_DEVELOPERUNLOCK = "developerUnlock";
 constexpr bool SETTINGS_STAGINGSERVER_DEFAULT = false;
 constexpr const char* SETTINGS_STAGINGSERVER = "stagingServer";
 
-constexpr bool SETTINGS_UNTESTEDFEATURES_DEFAULT = false;
-constexpr const char* SETTINGS_UNTESTEDFEATURES = "untestedFeatures";
+constexpr bool SETTINGS_EXPERIMENTALFEATURES_DEFAULT = false;
+constexpr const char* SETTINGS_EXPERIMENTALFEATURES = "experimentalFeatures";
 
 namespace {
 Logger logger(LOG_MAIN, "SettingsHolder");
@@ -254,9 +254,10 @@ GETSETDEFAULT(SETTINGS_DEVELOPERUNLOCK_DEFAULT, bool, toBool,
 GETSETDEFAULT(SETTINGS_STAGINGSERVER_DEFAULT, bool, toBool,
               SETTINGS_STAGINGSERVER, hasStagingServer, stagingServer,
               setStagingServer, stagingServerChanged)
-GETSETDEFAULT(SETTINGS_UNTESTEDFEATURES_DEFAULT, bool, toBool,
-              SETTINGS_UNTESTEDFEATURES, hasUntestedFeatures, untestedFeatures,
-              setUntestedFeatures, untestedFeaturesChanged)
+GETSETDEFAULT(SETTINGS_EXPERIMENTALFEATURES_DEFAULT, bool, toBool,
+              SETTINGS_EXPERIMENTALFEATURES, hasExperimentalFeatures,
+              experimentalFeatures, setExperimentalFeatures,
+              experimentalFeaturesChanged)
 
 #undef GETSETDEFAULT
 

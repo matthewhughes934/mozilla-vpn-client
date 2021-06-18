@@ -118,3 +118,7 @@ bool FeatureList::userDNSSupported() const {
   return false;
 #endif
 }
+
+bool FeatureList::experimentalFeaturesSupported() const {
+  return false;
+}

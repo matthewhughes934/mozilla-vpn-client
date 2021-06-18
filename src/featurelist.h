@@ -24,6 +24,8 @@ class FeatureList final : public QObject {
   Q_PROPERTY(bool notificationControlSupported READ notificationControlSupported
                  CONSTANT)
   Q_PROPERTY(bool userDNSSupported READ userDNSSupported CONSTANT)
+  Q_PROPERTY(bool experimentalFeaturesSupported READ experimentalFeaturesSupported
+                 CONSTANT)
 
  public:
   FeatureList() = default;
@@ -44,6 +46,8 @@ class FeatureList final : public QObject {
   bool notificationControlSupported() const;
 
   bool userDNSSupported() const;
+
+  bool experimentalFeaturesSupported() const;
 };
 
 #endif  // FEATURELIST_H

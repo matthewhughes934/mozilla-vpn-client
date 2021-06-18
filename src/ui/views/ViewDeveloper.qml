@@ -71,24 +71,25 @@ VPNFlickable {
     }
 
     VPNCheckBoxRow {
-        id: untestedFeatures
-        objectName: "settingsUntestedFeatures"
+        id: experimentalFeatures
+        objectName: "settingsExperimentalFeatures"
 
         anchors.top: restartRequired.visible ? restartRequired.bottom : stagingServer.bottom
         anchors.topMargin: Theme.windowMargin
         width: parent.width - Theme.windowMargin
 
-        //% "Enable Untested Features"
-        labelText: qsTrId("vpn.settings.untested")
+        //% "Enable Experimental Features"
+        labelText: qsTrId("vpn.settings.experimental")
         //% "Enable features that may be incomplete or buggy"
-        subLabelText: qsTrId("vpn.settings.untested.description")
+        subLabelText: qsTrId("vpn.settings.experimental.description")
 
-        isChecked: (VPNSettings.untestedFeatures)
+        isChecked: (VPNSettings.experimentalFeatures)
         isEnabled: vpnFlickable.vpnIsOff
         onClicked: {
             if (vpnFlickable.vpnIsOff) {
-                VPNSettings.untestedFeatures = !VPNSettings.untestedFeatures
+                VPNSettings.experimentalFeatures = !VPNSettings.experimentalFeatures
             }
-       }
+        }
+        visible: VPNFeatureList.experimentalFeaturesSupported
     }
 }
